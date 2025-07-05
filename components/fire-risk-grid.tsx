@@ -441,12 +441,17 @@ export function FireRiskGrid() {
                 )}
 
                 <Button
-                  className="w-full bg-red-600 hover:bg-red-700 mission-control-font text-xs sm:text-sm p-3 sm:p-4"
+                  className="w-full bg-red-600 hover:bg-red-700 mission-control-font text-xs sm:text-sm p-4 sm:p-6"
                   onClick={startSimulation}
                   disabled={!selectedCell}
                 >
-                  <Play className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />🔥 START FIRE SIMULATION FROM CELL [
-                  {selectedCell?.col || "X"}, {selectedCell?.row || "Y"}]
+                  <Play className="w-2 h-2 sm:w-2 sm:h-2 mr-2" />
+                  <span className="block sm:hidden">
+                    START SIMULATION [{selectedCell?.col || "X"}, {selectedCell?.row || "Y"}]
+                  </span>
+                  <span className="hidden sm:block">
+                    START SIMULATION CELL [{selectedCell?.col || "X"}, {selectedCell?.row || "Y"}]
+                  </span>
                 </Button>
 
                 {selectedCell && (
